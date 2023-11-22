@@ -64,7 +64,7 @@ const config: HardhatUserConfig = {
     goerli: getNetwork('goerli'),
     sepolia: getNetwork('sepolia'),
     proxy: getNetwork1('http://localhost:8545'),
-    opstack: getNetwork2()
+    karak: getNetwork2()
   },
   mocha: {
     timeout: 10000
