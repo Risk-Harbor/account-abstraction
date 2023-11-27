@@ -95,16 +95,33 @@ export class Create2Factory {
 
   // deploy the factory, if not already deployed.
   async deployFactory (signer?: Signer): Promise<void> {
-    if (await this._isFactoryDeployed()) {
-      return
-    }
-    await (signer ?? this.signer).sendTransaction({
-      to: Create2Factory.factoryDeployer,
-      value: BigNumber.from(Create2Factory.factoryDeploymentFee)
-    })
-    await this.provider.sendTransaction(Create2Factory.factoryTx)
-    if (!await this._isFactoryDeployed()) {
-      throw new Error('fatal: failed to deploy deterministic deployer')
+    try {
+      if (await this._isFactoryDeployed()) {
+        console.log('Factory already deployed. Skipping deployment.')
+        return
+      }
+
+      console.log('Deploying factory...')
+
+      await (signer ?? this.signer).sendTransaction({
+        to: Create2Factory.factoryDeployer,
+        value: BigNumber.from(Create2Factory.factoryDeploymentFee)
+      })
+
+      console.log('Transaction sent to factoryDeployer.')
+
+      await this.provider.sendTransaction(Create2Factory.factoryTx)
+
+      console.log('Transaction sent to factory.')
+
+      if (!(await this._isFactoryDeployed())) {
+        throw new Error('fatal: failed to deploy deterministic deployer')
+      }
+
+      console.log('Factory deployed successfully!')
+    } catch (error) {
+      console.error('Error during deployment:', error)
+      throw error // Re-throw the error after logging for better visibility
     }
   }
 
