@@ -7,8 +7,8 @@ import '@nomiclabs/hardhat-etherscan'
 import 'solidity-coverage'
 
 import * as fs from 'fs'
-import * as dotenv from "dotenv"
-dotenv.config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const mnemonicFileName = process.env.MNEMONIC_FILE ?? `${process.env.HOME}/.secret/testnet-mnemonic.txt`
 let mnemonic = 'test '.repeat(11) + 'junk'
@@ -24,6 +24,7 @@ function getNetwork1 (url: string): { url: string, accounts: { mnemonic: string 
 function getNetwork2 (): { url: string, accounts: string[] } {
   return {
     url: process.env.RPC_URL ?? 'http://localhost:8545',
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
   }
 }
