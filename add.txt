@@ -1,0 +1,5 @@
+==entrypoint addr= 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+deploying "SimpleAccountFactory" (tx: 0x65d74854db5cffbba5d2ac28b83e4f1fb6baaed7a2783e56adca5132a547208f)...: deployed at 0x9406Cc6185a346906296840746125a0E44976454 with 2799271 gas
+==SimpleAccountFactory addr= 0x9406Cc6185a346906296840746125a0E44976454
+deploying "VerifyingPaymaster" (tx: 0x261f84ad3327a141a0776f523ece669c3e15836e86714e2f66052c62b4fc8e34)...: deployed at 0x5b541B128704b7Fb1C8Ba0950C732d367BF2a81e with 1275925 gas
+==VerifyingPaymaster addr= 0x5b541B128704b7Fb1C8Ba0950C732d367BF2a81e
