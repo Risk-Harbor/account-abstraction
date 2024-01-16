@@ -11,7 +11,7 @@ export class Create2Factory {
   static readonly contractAddress = '0x4e59b44847b379578588920ca78fbf26c0b4956c'
   static readonly factoryTx = '0xf8a58085174876e800830186a08080b853604580600e600039806000f350fe7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe03601600081602082378035828234f58015156039578182fd5b8082525050506014600cf31ba02222222222222222222222222222222222222222222222222222222222222222a02222222222222222222222222222222222222222222222222222222222222222'
   static readonly factoryDeployer = '0x3fab184622dc19b6109349b94811493bf2a45362'
-  static readonly deploymentGasPrice = 100e9
+  static readonly deploymentGasPrice = 1500000000
   static readonly deploymentGasLimit = 100000
   static readonly factoryDeploymentFee = (Create2Factory.deploymentGasPrice * Create2Factory.deploymentGasLimit).toString()
 
